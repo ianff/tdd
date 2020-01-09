@@ -102,4 +102,13 @@ class SolutionTest {
 
     assertEquals("FizzWhizz", actual);
   }
+
+  @Test
+  void should_return_fizzbuzz_when_fizz_buzz_given_a_number_is_multiple_of_5_and_7_but_not_contains_5_or_7() {
+    int number = 140;
+
+    String actual = new Solution().fizzBuzz(number);
+
+    assertEquals("BuzzWhizz", actual);
+  }
 }
