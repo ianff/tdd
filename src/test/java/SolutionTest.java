@@ -21,4 +21,13 @@ class SolutionTest {
 
     assertEquals("Buzz", actual);
   }
+
+  @Test
+  void should_return_whizz_when_fizz_buzz_given_a_number_of_multiple_of_7() {
+    int number = 14;
+
+    String actual = new Solution().fizzBuzz(number);
+
+    assertEquals("Whizz", actual);
+  }
 }
