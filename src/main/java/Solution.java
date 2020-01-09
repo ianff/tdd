@@ -2,6 +2,9 @@ public class Solution {
   public String fizzBuzz(int number) {
     String strNumber = String.valueOf(number);
     if(strNumber.contains("5")) {
+      if(number % 5 == 0 && number % 7 == 0) {
+        return "BuzzWhizz";
+      }
       if(number % 5 == 0) {
         return "Buzz";
       }
