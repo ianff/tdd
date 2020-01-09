@@ -12,4 +12,13 @@ class SolutionTest {
 
     assertEquals("Fizz", actual);
   }
+
+  @Test
+  void should_return_buzz_when_fizz_buzz_given_a_number_of_multiple_of_5() {
+    int number = 10;
+
+    String actual = new Solution().fizzBuzz(number);
+
+    assertEquals("Buzz", actual);
+  }
 }
