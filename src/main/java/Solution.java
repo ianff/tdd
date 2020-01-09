@@ -10,6 +10,9 @@ public class Solution {
       }
     }
     if(strNumber.contains("7")) {
+      if(number % 3 == 0 && number % 7 == 0) {
+        return "FizzWhizz";
+      }
       if(number % 7 == 0) {
         return "Whizz";
       }
