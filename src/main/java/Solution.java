@@ -9,6 +9,10 @@ public class Solution {
     if(number % 7 == 0) {
       return "Whizz";
     }
+    String strNumber = String.valueOf(number);
+    if(strNumber.contains("3") && !strNumber.contains("5")) {
+      return "Fizz";
+    }
     return String.valueOf(number);
   }
 }

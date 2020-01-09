@@ -30,4 +30,13 @@ class SolutionTest {
 
     assertEquals("Whizz", actual);
   }
+
+  @Test
+  void should_return_fizz_when_fizz_buzz_given_a_number_contains_3_but_not_5() {
+    int number = 13;
+
+    String actual = new Solution().fizzBuzz(number);
+
+    assertEquals("Fizz", actual);
+  }
 }
