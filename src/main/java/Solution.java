@@ -9,6 +9,11 @@ public class Solution {
         return "Buzz";
       }
     }
+    if(strNumber.contains("7")) {
+      if(number % 7 == 0) {
+        return "Whizz";
+      }
+    }
     if(number % 3 == 0) {
       return "Fizz";
     }

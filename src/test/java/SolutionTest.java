@@ -66,4 +66,13 @@ class SolutionTest {
 
     assertEquals("Buzz", actual);
   }
+
+  @Test
+  void should_return_whizz_when_fizz_buzz_given_a_number_contains_7_but_not_5_and_is_multiple_of_7_and_5() {
+    int number = 70;
+
+    String actual = new Solution().fizzBuzz(number);
+
+    assertEquals("Whizz", actual);
+  }
 }
