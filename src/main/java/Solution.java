@@ -17,6 +17,12 @@ public class Solution {
         return "Whizz";
       }
     }
+    if(strNumber.contains("3") && !strNumber.contains("5")) {
+      return "Fizz";
+    }
+    if(number % 3 == 0 && number % 5 == 0) {
+      return "FizzBuzz";
+    }
     if(number % 3 == 0) {
       return "Fizz";
     }
@@ -25,9 +31,6 @@ public class Solution {
     }
     if(number % 7 == 0) {
       return "Whizz";
-    }
-    if(strNumber.contains("3") && !strNumber.contains("5")) {
-      return "Fizz";
     }
     return String.valueOf(number);
   }
