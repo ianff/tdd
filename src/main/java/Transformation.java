@@ -9,6 +9,15 @@ public class Transformation {
       return FIZZ;
     }
 
+    if(strNumber.contains("5")) {
+      StringBuilder sb = new StringBuilder();
+      sb.append(BUZZ);
+      if(number % 7 == 0) {
+        sb.append(WHIZZ);
+      }
+      return sb.toString();
+    }
+
     String result = handleFizzBuzzTransformation(number);
 
     return result.length() == 0 ? String.valueOf(number) : result;

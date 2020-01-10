@@ -59,4 +59,11 @@ class TransformationTest {
 
     assertEquals("Fizz", new Transformation().fizzBuzz(number));
   }
+
+  @Test
+  void should_return_buzz_given_a_number_contains_5_but_can_not_be_divided_by_7() {
+    int number = 15;
+
+    assertEquals("Buzz", new Transformation().fizzBuzz(number));
+  }
 }
