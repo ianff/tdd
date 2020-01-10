@@ -5,22 +5,17 @@ public class Transformation {
   public String fizzBuzz(int number) {
     String strNumber = String.valueOf(number);
 
-    if(strNumber.contains("5")) {
-      StringBuilder sb = new StringBuilder();
-      sb.append(BUZZ);
-      if(number % 7 == 0) {
-        sb.append(WHIZZ);
-      }
-      return sb.toString();
-    }
-
-    if(strNumber.contains("3")) {
-      return FIZZ;
-    }
-
     String result = handleFizzBuzzTransformation(number);
 
-    return result.length() == 0 ? String.valueOf(number) : result;
+    if(strNumber.contains("5")) {
+      result = result.replace(FIZZ, "");
+    }
+
+    if(strNumber.contains("3") && !strNumber.contains("5")) {
+      result = FIZZ;
+    }
+
+    return result;
   }
 
   private String handleFizzBuzzTransformation(int number) {
@@ -36,6 +31,6 @@ public class Transformation {
       sb.append(WHIZZ);
     }
 
-    return sb.toString();
+    return sb.length() == 0 ? String.valueOf(number) : sb.toString();
   }
 }
