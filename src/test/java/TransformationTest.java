@@ -17,4 +17,11 @@ class TransformationTest {
 
     assertEquals("Buzz", new Transformation().fizzBuzz(number));
   }
+
+  @Test
+  void should_return_whizz_given_a_number_is_multiple_of_7() {
+    int number = 14;
+
+    assertEquals("Whizz", new Transformation().fizzBuzz(number));
+  }
 }
