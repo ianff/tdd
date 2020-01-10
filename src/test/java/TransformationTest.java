@@ -1,7 +1,15 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+@ExtendWith({MockitoExtension.class})
 class TransformationTest {
 
   @Test
@@ -72,5 +80,25 @@ class TransformationTest {
     int number = 35;
 
     assertEquals("BuzzWhizz", new Transformation().fizzBuzz(number));
+  }
+
+  @Mock
+  private Numbers numbers;
+
+  @InjectMocks
+  private Transformation transformation;
+
+  @Test
+  void should_return_fizzwhizz_given_a_number_contains_7_but_not_3_nor_5_and_can_be_divided_by_3_5_7() {
+    int number = 4;
+    when(numbers.multipleOf3(number)).thenReturn(true);
+    when(numbers.multipleOf5(number)).thenReturn(true);
+    when(numbers.multipleOf7(number)).thenReturn(true);
+
+    when(numbers.contains5(number)).thenReturn(false);
+    when(numbers.contains3(number)).thenReturn(false);
+    when(numbers.contains7(number)).thenReturn(true);
+
+    assertEquals("FizzWhizz", transformation.fizzBuzz(number));
   }
 }

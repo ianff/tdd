@@ -2,32 +2,36 @@ public class Transformation {
   private static String FIZZ = "Fizz";
   private static String BUZZ = "Buzz";
   private static String WHIZZ = "Whizz";
-  public String fizzBuzz(int number) {
-    String strNumber = String.valueOf(number);
 
+  private Numbers numbers = new Numbers();
+
+  public String fizzBuzz(int number) {
     String result = handleFizzBuzzTransformation(number);
 
-    if(strNumber.contains("5")) {
+    if(numbers.contains5(number)) {
       result = result.replace(FIZZ, "");
     }
 
-    if(strNumber.contains("3") && !strNumber.contains("5")) {
+    if(numbers.contains3(number) && !numbers.contains5(number)) {
       result = FIZZ;
     }
 
+    if(numbers.contains7(number)) {
+      result = result.replace(BUZZ, "");
+    }
     return result;
   }
 
   private String handleFizzBuzzTransformation(int number) {
     StringBuilder sb = new StringBuilder();
 
-    if(number % 3 == 0) {
+    if(numbers.multipleOf3(number)) {
       sb.append(FIZZ);
     }
-    if(number % 5 == 0) {
+    if(numbers.multipleOf5(number)) {
       sb.append(BUZZ);
     }
-    if(number % 7 == 0) {
+    if(numbers.multipleOf7(number)) {
       sb.append(WHIZZ);
     }
 
