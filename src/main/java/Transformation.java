@@ -5,10 +5,6 @@ public class Transformation {
   public String fizzBuzz(int number) {
     String strNumber = String.valueOf(number);
 
-    if(strNumber.contains("3")) {
-      return FIZZ;
-    }
-
     if(strNumber.contains("5")) {
       StringBuilder sb = new StringBuilder();
       sb.append(BUZZ);
@@ -16,6 +12,10 @@ public class Transformation {
         sb.append(WHIZZ);
       }
       return sb.toString();
+    }
+
+    if(strNumber.contains("3")) {
+      return FIZZ;
     }
 
     String result = handleFizzBuzzTransformation(number);

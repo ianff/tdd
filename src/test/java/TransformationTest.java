@@ -66,4 +66,11 @@ class TransformationTest {
 
     assertEquals("Buzz", new Transformation().fizzBuzz(number));
   }
+
+  @Test
+  void should_return_buzz_given_a_number_contains_5_and_3_and_can_be_divided_by_7() {
+    int number = 35;
+
+    assertEquals("BuzzWhizz", new Transformation().fizzBuzz(number));
+  }
 }
