@@ -4,6 +4,12 @@ public class Transformation {
   private static String WHIZZ = "Whizz";
   public String fizzBuzz(int number) {
     StringBuilder sb = new StringBuilder();
+    String strNumber = String.valueOf(number);
+
+    if(strNumber.contains("3")) {
+      return FIZZ;
+    }
+
     if(number % 3 == 0) {
       sb.append(FIZZ);
     }

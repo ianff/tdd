@@ -48,8 +48,15 @@ class TransformationTest {
 
   @Test
   void should_return_fizzbuzz_given_a_number_is_multiple_of_5_and_7() {
-    int number = 35;
+    int number = 245;
 
     assertEquals("BuzzWhizz", new Transformation().fizzBuzz(number));
+  }
+
+  @Test
+  void should_return_fizz_given_a_number_contains_3() {
+    int number = 13;
+
+    assertEquals("Fizz", new Transformation().fizzBuzz(number));
   }
 }
