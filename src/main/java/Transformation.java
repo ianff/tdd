@@ -8,7 +8,7 @@ public class Transformation {
   public String fizzBuzz(int number) {
     String result = handleFizzBuzzTransformation(number);
 
-    if(numbers.contains5(number)) {
+    if(numbers.contains5(number) && !numbers.contains7(number)) {
       result = result.replace(FIZZ, "");
     }
 
