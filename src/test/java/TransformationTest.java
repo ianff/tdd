@@ -24,4 +24,11 @@ class TransformationTest {
 
     assertEquals("Whizz", new Transformation().fizzBuzz(number));
   }
+
+  @Test
+  void should_return_as_is_given_a_number_is_not_multiple_of_3_or_5_7() {
+    int number = 8;
+
+    assertEquals("8", new Transformation().fizzBuzz(number));
+  }
 }
