@@ -33,21 +33,21 @@ class TransformationTest {
   }
 
   @Test
-  void should_return_fizzbuzz_is_given_a_number_is_multiple_of_3_and_5() {
+  void should_return_fizzbuzz_given_a_number_is_multiple_of_3_and_5() {
     int number = 60;
 
     assertEquals("FizzBuzz", new Transformation().fizzBuzz(number));
   }
 
   @Test
-  void should_return_fizzbuzz_is_given_a_number_is_multiple_of_3_and_7() {
+  void should_return_fizzbuzz_given_a_number_is_multiple_of_3_and_7() {
     int number = 21;
 
     assertEquals("FizzWhizz", new Transformation().fizzBuzz(number));
   }
 
   @Test
-  void should_return_fizzbuzz_is_given_a_number_is_multiple_of_5_and_7() {
+  void should_return_fizzbuzz_given_a_number_is_multiple_of_5_and_7() {
     int number = 35;
 
     assertEquals("BuzzWhizz", new Transformation().fizzBuzz(number));
