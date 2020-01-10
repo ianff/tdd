@@ -90,7 +90,7 @@ class TransformationTest {
 
   @Test
   void should_return_fizzwhizz_given_a_number_contains_7_but_not_3_nor_5_and_can_be_divided_by_3_5_7() {
-    int number = 4;
+    int number = anyInt();
     when(numbers.multipleOf3(number)).thenReturn(true);
     when(numbers.multipleOf5(number)).thenReturn(true);
     when(numbers.multipleOf7(number)).thenReturn(true);
@@ -100,5 +100,19 @@ class TransformationTest {
     when(numbers.contains7(number)).thenReturn(true);
 
     assertEquals("FizzWhizz", transformation.fizzBuzz(number));
+  }
+
+  @Test
+  void should_return_as_is_given_a_number_contains_7_but_not_3_nor_5_and_can_be_divided_by_5_but_not_3_or_7() {
+    int number = 99;
+    when(numbers.multipleOf3(number)).thenReturn(false);
+    when(numbers.multipleOf5(number)).thenReturn(true);
+    when(numbers.multipleOf7(number)).thenReturn(false);
+
+    when(numbers.contains5(number)).thenReturn(false);
+    when(numbers.contains3(number)).thenReturn(false);
+    when(numbers.contains7(number)).thenReturn(true);
+
+    assertEquals("99", transformation.fizzBuzz(number));
   }
 }

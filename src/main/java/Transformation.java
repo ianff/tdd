@@ -19,7 +19,7 @@ public class Transformation {
     if(numbers.contains7(number)) {
       result = result.replace(BUZZ, "");
     }
-    return result;
+    return result.length() == 0 ? String.valueOf(number) : result;
   }
 
   private String handleFizzBuzzTransformation(int number) {
