@@ -5,20 +5,33 @@ public class Transformation {
   private static String WHIZZ = "Whizz";
 
   public String fizzBuzz(int number) {
+    String strNumber = String.valueOf(number);
+    if(contains(strNumber, 3)) {
+      return FIZZ;
+    }
+
     return handleTransformation(number);
   }
 
   private String handleTransformation(int number) {
     StringBuilder sb = new StringBuilder();
-    if(number % 3 == 0) {
+    if(isDivisible(number, 3)) {
       sb.append(FIZZ);
     }
-    if(number % 5 == 0) {
+    if(isDivisible(number, 5)) {
       sb.append(BUZZ);
     }
-    if(number % 7 == 0) {
+    if(isDivisible(number, 7)) {
       sb.append(WHIZZ);
     }
     return sb.length() == 0 ? String.valueOf(number) : sb.toString();
+  }
+
+  public boolean isDivisible(int number, int divisor) {
+    return number % divisor == 0;
+  }
+
+  public boolean contains(String strNumber, int anotherNumber) {
+    return strNumber.contains(String.valueOf(anotherNumber));
   }
 }
