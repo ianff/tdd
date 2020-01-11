@@ -36,9 +36,16 @@ class TransformationTest {
 
   @Test
   void should_return_fizzbuzz_given_a_number_is_a_multiple_of_3_and_5() {
-    int number = 15;
+    Transformation transformation = spy(Transformation.class);
 
-    assertEquals("FizzBuzz", new Transformation().fizzBuzz(number));
+    doReturn(true).when(transformation).contains(anyString(), eq(5));
+    doReturn(false).when(transformation).contains(anyString(), eq(3));
+
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(3));
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(5));
+    doReturn(false).when(transformation).isDivisible(anyInt(), eq(7));
+
+    assertEquals("Buzz", transformation.fizzBuzz(anyInt()));
   }
 
   @Test
@@ -48,6 +55,7 @@ class TransformationTest {
     doReturn(true).when(transformation).isDivisible(anyInt(), eq(5));
     doReturn(true).when(transformation).isDivisible(anyInt(), eq(7));
     doReturn(false).when(transformation).isDivisible(anyInt(), eq(3));
+
     doReturn(false).when(transformation).contains(anyString(), eq(3));
 
     assertEquals("BuzzWhizz", transformation.fizzBuzz(anyInt()));
@@ -62,9 +70,16 @@ class TransformationTest {
 
   @Test
   void should_return_fizzbuzzwhizz_given_a_number_is_a_multiple_of_7_and_3_and_5() {
-    int number = 105;
+    Transformation transformation = spy(Transformation.class);
 
-    assertEquals("FizzBuzzWhizz", new Transformation().fizzBuzz(number));
+    doReturn(false).when(transformation).contains(anyString(), eq(5));
+    doReturn(false).when(transformation).contains(anyString(), eq(3));
+
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(3));
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(5));
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(7));
+
+    assertEquals("FizzBuzzWhizz", transformation.fizzBuzz(anyInt()));
   }
 
   @Test
@@ -72,6 +87,20 @@ class TransformationTest {
     int number = 13;
 
     assertEquals("Fizz", new Transformation().fizzBuzz(number));
+  }
+
+  @Test
+  void should_return_buzzwhizz_given_a_number_contains_5_but_not_3_and_can_be_divided_by_3_and_5_and_7() {
+    Transformation transformation = spy(Transformation.class);
+
+    doReturn(true).when(transformation).contains(anyString(), eq(5));
+    doReturn(false).when(transformation).contains(anyString(), eq(3));
+
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(3));
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(5));
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(7));
+
+    assertEquals("BuzzWhizz", transformation.fizzBuzz(anyInt()));
   }
 
   @Test

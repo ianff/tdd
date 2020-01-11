@@ -5,12 +5,17 @@ public class Transformation {
   private static String WHIZZ = "Whizz";
 
   public String fizzBuzz(int number) {
+    String res = handleTransformation(number);
+
     String strNumber = String.valueOf(number);
     if(contains(strNumber, 3)) {
       return FIZZ;
     }
+    if(contains(strNumber, 5)) {
+      return res.replace(FIZZ, "");
+    }
 
-    return handleTransformation(number);
+    return res;
   }
 
   private String handleTransformation(int number) {
