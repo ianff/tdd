@@ -11,13 +11,13 @@ public class Transformation {
   private String handleTransformation(int number) {
     StringBuilder sb = new StringBuilder();
     if(number % 3 == 0) {
-      sb.append("Fizz");
+      sb.append(FIZZ);
     }
     if(number % 5 == 0) {
-      sb.append("Buzz");
+      sb.append(BUZZ);
     }
     if(number % 7 == 0) {
-      sb.append("Whizz");
+      sb.append(WHIZZ);
     }
     return sb.length() == 0 ? String.valueOf(number) : sb.toString();
   }
