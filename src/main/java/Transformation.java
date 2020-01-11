@@ -9,6 +9,6 @@ public class Transformation {
     if(number % 7 == 0) {
       return "Whizz";
     }
-    return null;
+    return String.valueOf(number);
   }
 }
