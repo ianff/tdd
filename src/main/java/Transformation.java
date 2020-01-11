@@ -14,6 +14,9 @@ public class Transformation {
     if(contains(strNumber, 3) && !contains(strNumber, 5)) {
       return FIZZ;
     }
+    if(contains(strNumber, 7)) {
+      res = res.replace(BUZZ, "");
+    }
 
     return res;
   }
