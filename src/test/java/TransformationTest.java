@@ -104,7 +104,7 @@ class TransformationTest {
   }
 
   @Test
-  void should_return_buzzwhizz_given_a_number_contains_5_but_not_3_and_can_be_divided_by_3_and_5_but_not_7() {
+  void should_return_buzz_given_a_number_contains_5_but_not_3_and_can_be_divided_by_3_and_5_but_not_7() {
     Transformation transformation = spy(Transformation.class);
 
     doReturn(true).when(transformation).contains(anyString(), eq(5));
@@ -129,6 +129,20 @@ class TransformationTest {
     doReturn(true).when(transformation).isDivisible(anyInt(), eq(7));
 
     assertEquals("BuzzWhizz", transformation.fizzBuzz(anyInt()));
+  }
+
+  @Test
+  void should_return_buzz_given_a_number_contains_5_and_3_and_can_not_be_divided_by_7() {
+    Transformation transformation = spy(Transformation.class);
+
+    doReturn(true).when(transformation).contains(anyString(), eq(5));
+    doReturn(true).when(transformation).contains(anyString(), eq(3));
+
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(3));
+    doReturn(true).when(transformation).isDivisible(anyInt(), eq(5));
+    doReturn(false).when(transformation).isDivisible(anyInt(), eq(7));
+
+    assertEquals("Buzz", transformation.fizzBuzz(anyInt()));
   }
 
   @Test
