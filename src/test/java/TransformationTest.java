@@ -160,6 +160,21 @@ class TransformationTest {
   }
 
   @Test
+  void should_return_as_is_given_a_number_contains_7_but_not_5_and_can_be_divided_by_5_but_not_or_7_or_3() {
+    int number = 170;
+    Transformation transformation = spy(Transformation.class);
+
+    doReturn(true).when(transformation).contains(String.valueOf(number), 7);
+    doReturn(false).when(transformation).contains(String.valueOf(number), 5);
+
+    doReturn(false).when(transformation).isDivisible(number, 3);
+    doReturn(true).when(transformation).isDivisible(number, 5);
+    doReturn(false).when(transformation).isDivisible(number, 7);
+
+    assertEquals("170", transformation.fizzBuzz(number));
+  }
+
+  @Test
   void should_return_true_when_is_divisible_given_a_number_can_be_divided_by_another_number() {
     int number = 15;
     int anotherNumber = 3;

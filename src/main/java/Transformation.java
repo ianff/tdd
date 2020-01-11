@@ -18,7 +18,7 @@ public class Transformation {
       res = res.replace(BUZZ, "");
     }
 
-    return res;
+    return res.length() == 0 ? String.valueOf(number) : res;
   }
 
   private String handleTransformation(int number) {
