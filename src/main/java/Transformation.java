@@ -8,11 +8,11 @@ public class Transformation {
     String res = handleTransformation(number);
 
     String strNumber = String.valueOf(number);
-    if(contains(strNumber, 3)) {
-      return FIZZ;
-    }
     if(contains(strNumber, 5)) {
-      return res.replace(FIZZ, "");
+      res = res.replace(FIZZ, "");
+    }
+    if(contains(strNumber, 3) && !contains(strNumber, 5)) {
+      return FIZZ;
     }
 
     return res;
