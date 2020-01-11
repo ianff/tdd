@@ -8,7 +8,7 @@ public class Transformation {
     String res = handleTransformation(number);
 
     String strNumber = String.valueOf(number);
-    if(contains(strNumber, 5)) {
+    if(contains(strNumber, 5) && !contains(strNumber, 7)) {
       res = res.replace(FIZZ, "");
     }
     if(contains(strNumber, 3) && !contains(strNumber, 5)) {
