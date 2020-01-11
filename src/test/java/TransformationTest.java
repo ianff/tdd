@@ -31,4 +31,11 @@ class TransformationTest {
 
     assertEquals("4", new Transformation().fizzBuzz(number));
   }
+
+  @Test
+  void should_return_fizz_given_a_number_is_a_multiple_of_3_and_5() {
+    int number = 15;
+
+    assertEquals("FizzBuzz", new Transformation().fizzBuzz(number));
+  }
 }
